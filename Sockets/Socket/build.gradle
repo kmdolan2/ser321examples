@@ -7,7 +7,7 @@ task runClient(type: JavaExec) {
   description = "Run Client"
   main = 'SockClient'
   // default args
-  args 'localhost' // host
+  args '18.223.132.123' // host
   args '8888' // port
   args '10' // int value to write
   args '20' // int value to write
