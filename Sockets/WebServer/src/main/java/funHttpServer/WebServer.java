@@ -17,6 +17,7 @@ write a response back
 package funHttpServer;
 
 import java.io.*;
+import org.json.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -249,13 +250,21 @@ class WebServer {
           String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
           System.out.println(json);
 
-          builder.append("Check the todos mentioned in the Java source file");
+          //builder.append("Check the todos mentioned in the Java source file");
           // TODO: Parse the JSON returned by your fetch and create an appropriate
           // response
-          // and list the owner name, owner id and name of the public repo on your webpage, e.g.
+          // and list the full_name, repo id, login, e.g.
           // amehlhase, 46384989 -> memoranda
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
+          JSONObject jsonObj = new JSONObject(json);
+          JSONArray repoArray = new JSONArray(json);
+          for (int i = 0; i < repoArray.length(); i++) {
+            builder.append("full_name: " + repoArray.getJSONObject(i).getString("full_name"));
+            builder.append("repo id: " + repoArray.getJSONObject(i).getString("id"));
+            builder.append("login: " + repoArray.getJSONObject(i).getJSONObject("owner").getString("login"));
+          }
+
 
         } else {
           // if the request is not recognized at all
