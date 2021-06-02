@@ -218,7 +218,7 @@ class WebServer {
             builder.append("Content-Type: text/html; charset=utf-8\n");
             builder.append("\n");
             builder.append("Result is: " + result);
-          } catch (Excpetion e) {
+          } catch (Exception e) {
             num1 = 1;
             num2 = 2;
 
