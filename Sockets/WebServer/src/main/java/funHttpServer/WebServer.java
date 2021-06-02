@@ -229,7 +229,7 @@ class WebServer {
             builder.append("HTTP/1.1 400 Bad Request\n");
             builder.append("Content-Type: text/html; charset=utf-8\n");
             builder.append("\n");
-            builder.append("ERROR 400: Bad Request\nResult is based on defualt of num1 = 1 and num2 = 2: " + result);
+            builder.append("(ERROR 400: BAD REQUEST)\nResult is based on defualt of num1 = 1 and num2 = 2: " + result);
           }
 
           // TODO: Include error handling here with a correct error code and
