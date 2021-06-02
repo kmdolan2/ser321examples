@@ -257,7 +257,7 @@ class WebServer {
           // amehlhase, 46384989 -> memoranda
           // amehlhase, 46384989 -> ser316examples
           // amehlhase, 46384989 -> test316
-          JSONObject jsonObj = new JSONObject(json);
+
           JSONArray repoArray = new JSONArray(json);
           for (int i = 0; i < repoArray.length(); i++) {
             builder.append("full_name: " + repoArray.getJSONObject(i).getString("full_name"));
